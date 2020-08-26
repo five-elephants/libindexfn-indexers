@@ -1,0 +1,15 @@
+[package]
+name = "libindexfn-indexers"
+version = "0.1.0"
+authors = ["Simon Friedmann <simonf256@googlemail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dev-dependencies]
+temp_testdir = "^0.2"
+tokio-test = "^0.2"
+
+[dependencies]
+libindexfn = { git = 'https://github.com/five-elephants/libindexfn' }
+log = "^0.4"

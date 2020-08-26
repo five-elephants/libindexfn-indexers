@@ -31,7 +31,13 @@ pub async fn multi_index_by_words<S: AccessStorage + Sync>(
 
     let words: Vec<_> = filtered_text
         .split(char::is_whitespace)
-        .map(|s| s.to_string())
+        .filter_map(|s| {
+            if s.len() > 1 {
+                Some(s.to_string())
+            } else {
+                None
+            }
+        })
         .collect();
 
     Ok(words)
